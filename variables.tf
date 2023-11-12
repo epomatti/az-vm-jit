@@ -5,5 +5,5 @@ variable "location" {
 
 variable "vm_size" {
   type    = string
-  default = "Standard_B2pts"
+  default = "Standard_B2pts_v2"
 }
