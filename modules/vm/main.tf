@@ -27,7 +27,7 @@ locals {
 }
 
 resource "azurerm_linux_virtual_machine" "default" {
-  name                  = "vm-${var.workload}"
+  name                  = "vm-${var.workload}2"
   resource_group_name   = var.resource_group_name
   location              = var.location
   size                  = var.size
@@ -57,6 +57,16 @@ resource "azurerm_linux_virtual_machine" "default" {
     offer     = "0001-com-ubuntu-server-jammy"
     sku       = "22_04-lts-gen2"
     # sku       = "22_04-lts-arm64"
-    version   = "latest"
+    version = "latest"
   }
+}
+
+resource "azurerm_virtual_machine_extension" "azure_monitor_agent" {
+  name                       = "monitor-agent"
+  virtual_machine_id         = azurerm_linux_virtual_machine.default.id
+  publisher                  = "Microsoft.Azure.Monitor"
+  type                       = "AzureMonitorLinuxAgent"
+  type_handler_version       = "1.28"
+  auto_upgrade_minor_version = true
+  automatic_upgrade_enabled  = true
 }

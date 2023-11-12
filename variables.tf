@@ -5,6 +5,6 @@ variable "location" {
 
 variable "vm_size" {
   type    = string
-  default = "Standard_B1ls"
+  default = "Standard_B1ms"
   # default = "Standard_B2pts_v2"
 }
