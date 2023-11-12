@@ -9,9 +9,11 @@ terraform init
 terraform apply -auto-approve
 ```
 
-You'll need to enable [Microsoft Defender for Servers][1].
+You'll need to enable [Microsoft Defender for Servers][1] for the Subscription.
 
-When
+Make sure you enable **Cloud Workload Protection (CWP)** for **Servers**. After that, install the agents using the Portal just for completeness.
+
+
 
 
 [1]: https://learn.microsoft.com/en-us/azure/defender-for-cloud/tutorial-enable-servers-plan
