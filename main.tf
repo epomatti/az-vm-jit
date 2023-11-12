@@ -4,6 +4,10 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "3.79.0"
     }
+    azapi = {
+      source  = "Azure/azapi"
+      version = "1.10.0"
+    }
   }
 }
 
@@ -30,4 +34,11 @@ module "vm" {
   location            = azurerm_resource_group.default.location
   subnet_id           = module.vnet.subnet_id
   size                = var.vm_size
+}
+
+module "jit" {
+  source            = "./modules/jit"
+  resource_group_id = azurerm_resource_group.default.id
+  location          = azurerm_resource_group.default.location
+  vm_id             = module.vm.vm_id
 }

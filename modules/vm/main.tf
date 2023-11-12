@@ -27,7 +27,7 @@ locals {
 }
 
 resource "azurerm_linux_virtual_machine" "default" {
-  name                  = "vm-${var.workload}2"
+  name                  = "vm-${var.workload}3"
   resource_group_name   = var.resource_group_name
   location              = var.location
   size                  = var.size
