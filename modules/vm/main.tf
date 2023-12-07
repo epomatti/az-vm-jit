@@ -49,18 +49,18 @@ resource "azurerm_linux_virtual_machine" "default" {
   os_disk {
     name                 = "osdisk-linux-${var.workload}"
     caching              = "ReadOnly"
-    storage_account_type = "Standard_LRS"
+    storage_account_type = "StandardSSD_LRS"
   }
 
   source_image_reference {
     publisher = "Canonical"
     offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts-gen2"
-    # sku       = "22_04-lts-arm64"
-    version = "latest"
+    sku       = "22_04-lts-arm64"
+    version   = "latest"
   }
 }
 
+# TODO: This was having issues with ARM64
 resource "azurerm_virtual_machine_extension" "azure_monitor_agent" {
   name                       = "monitor-agent"
   virtual_machine_id         = azurerm_linux_virtual_machine.default.id
