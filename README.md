@@ -21,9 +21,9 @@ The execution will fail with the following error:
 
 Add the server to Defender and apply again to finish the setup.
 
-If everything goes right, the JIT policy will automatically be created to the VM by the Terraform AzApi provider.
-
 ## JIT
+
+If everything goes right, the JIT policy will automatically be created to the VM by the Terraform AzApi provider.
 
 Defender should have created the following `Deny` rule:
 
