@@ -2,7 +2,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.83.0"
+      version = "3.84.0"
     }
     azapi = {
       source  = "Azure/azapi"
@@ -41,4 +41,10 @@ module "jit" {
   resource_group_id = azurerm_resource_group.default.id
   location          = azurerm_resource_group.default.location
   vm_id             = module.vm.vm_id
+}
+
+module "entra" {
+  source                = "./modules/entra"
+  entraid_tenant_domain = var.entraid_tenant_domain
+  generic_password      = var.generic_password
 }
