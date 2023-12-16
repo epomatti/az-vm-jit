@@ -42,9 +42,3 @@ module "jit" {
   location          = azurerm_resource_group.default.location
   vm_id             = module.vm.vm_id
 }
-
-module "entra" {
-  source                = "./modules/entra"
-  entraid_tenant_domain = var.entraid_tenant_domain
-  generic_password      = var.generic_password
-}
