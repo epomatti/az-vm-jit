@@ -25,6 +25,11 @@ Add the server to Defender and apply again to finish the setup.
 
 If everything goes right, the JIT policy will automatically be created to the VM by the Terraform AzApi provider.
 
+Permissions required are:
+
+- `Microsoft.Security/locations/jitNetworkAccessPolicies/initiate/action`
+- `Microsoft.Compute/virtualMachines/read`
+
 Defender should have created the following `Deny` rule:
 
 <img src=".assets/az-jit-deny.png" />
