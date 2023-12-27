@@ -30,6 +30,11 @@ Permissions required are:
 - `Microsoft.Security/locations/jitNetworkAccessPolicies/initiate/action`
 - `Microsoft.Compute/virtualMachines/read`
 
+To be able to login with Entra ID credentials, users must have one of: 
+
+- `Virtual Machine Administrator Login`
+- `Virtual Machine User Login`
+
 Defender should have created the following `Deny` rule:
 
 <img src=".assets/az-jit-deny.png" />
