@@ -45,7 +45,7 @@ Defender should create the following `Allow` rule:
 
 <img src=".assets/az-jit-allow.png" />
 
-## VMAccess extensions
+## `VMAccess` extension
 
 It is possible to extend VM management capabilities using the [VMAccess extension][2].
 
