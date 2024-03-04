@@ -2,11 +2,11 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.84.0"
+      version = "3.94.0"
     }
     azapi = {
       source  = "Azure/azapi"
-      version = "1.10.0"
+      version = "1.12.1"
     }
   }
 }
@@ -28,12 +28,13 @@ module "vnet" {
 }
 
 module "vm" {
-  source              = "./modules/vm"
-  workload            = local.workload
-  resource_group_name = azurerm_resource_group.default.name
-  location            = azurerm_resource_group.default.location
-  subnet_id           = module.vnet.subnet_id
-  size                = var.vm_size
+  source                     = "./modules/vm"
+  workload                   = local.workload
+  resource_group_name        = azurerm_resource_group.default.name
+  location                   = azurerm_resource_group.default.location
+  subnet_id                  = module.vnet.subnet_id
+  size                       = var.vm_size
+  install_vmaccess_extension = var.install_vmaccess_extension
 }
 
 module "jit" {

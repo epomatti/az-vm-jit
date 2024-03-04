@@ -45,6 +45,24 @@ Defender should create the following `Allow` rule:
 
 <img src=".assets/az-jit-allow.png" />
 
+## VMAccess extensions
+
+It is possible to extend VM management capabilities using the `VMAccess extension`.
+
+To install the extension using Terraform:
+
+```sh
+# VMAccess
+install_vmaccess_extension = true
+```
+
+To check for deployed extensions and the installation status:
+
+```sh
+az vm extension list \
+    --resource-group <resource-group> \
+    --vm-name <vm-name> -o table
+```
 
 ---
 
@@ -60,4 +78,4 @@ terraform destroy -auto-approve
 
 
 [1]: https://learn.microsoft.com/en-us/azure/defender-for-cloud/tutorial-enable-servers-plan
-
+[2]: https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess

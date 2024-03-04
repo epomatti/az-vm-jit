@@ -69,3 +69,20 @@ resource "azurerm_virtual_machine_extension" "AzureMonitorLinuxAgent" {
   auto_upgrade_minor_version = true
   automatic_upgrade_enabled  = true
 }
+
+resource "azurerm_virtual_machine_extension" "VMAccessForLinux" {
+  count                      = var.install_vmaccess_extension ? 1 : 0
+  name                       = "VMAccessForLinux"
+  virtual_machine_id         = azurerm_linux_virtual_machine.default.id
+  publisher                  = "Microsoft.OSTCExtensions"
+  type                       = "VMAccessForLinux"
+  type_handler_version       = "1.5"
+  auto_upgrade_minor_version = true
+
+  # TODO: Check this in production
+  protected_settings = jsonencode({
+    "username" : "currentusername",
+    "password" : "newpassword",
+    "reset_ssh" : "false"
+  })
+}
