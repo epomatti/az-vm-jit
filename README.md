@@ -47,7 +47,7 @@ Defender should create the following `Allow` rule:
 
 ## VMAccess extensions
 
-It is possible to extend VM management capabilities using the `VMAccess extension`.
+It is possible to extend VM management capabilities using the [VMAccess extension][2].
 
 To install the extension using Terraform:
 
