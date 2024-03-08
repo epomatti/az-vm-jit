@@ -76,6 +76,5 @@ Destroy the infrastructure:
 terraform destroy -auto-approve
 ```
 
-
 [1]: https://learn.microsoft.com/en-us/azure/defender-for-cloud/tutorial-enable-servers-plan
 [2]: https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess
