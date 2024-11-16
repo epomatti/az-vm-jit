@@ -8,18 +8,13 @@ Make sure you enable **Cloud Workload Protection (CWP)** for **Servers**. After 
 
 Start by creating the sandbox infrastructure:
 
+> [!TIP]
+> If you get the error `'LinuxJITPolicy' is not onboarded to Defender For Servers offering.`, add the server to Defender and apply again to finish the setup.
+
 ```sh
 terraform init
 terraform apply -auto-approve
 ```
-
-The execution will fail with the following error:
-
-> [!TIP]
-> If you get the error `'LinuxJITPolicy' is not onboarded to Defender For Servers offering.`, add the server to Defender and apply again to finish the setup.
-
-
-Add the server to Defender and apply again to finish the setup.
 
 ## JIT
 
