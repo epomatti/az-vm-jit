@@ -15,9 +15,9 @@ terraform apply -auto-approve
 
 The execution will fail with the following error:
 
-```
-'LinuxJITPolicy' is not onboarded to Defender For Servers offering.
-```
+> [!TIP]
+> If you get the error `'LinuxJITPolicy' is not onboarded to Defender For Servers offering.`, add the server to Defender and apply again to finish the setup.
+
 
 Add the server to Defender and apply again to finish the setup.
 
