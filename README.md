@@ -6,6 +6,18 @@ You'll need to enable [Microsoft Defender for Servers][1] for the Subscription.
 
 Make sure you enable **Cloud Workload Protection (CWP)** for **Servers**. After that, install the agents using the Portal just for completeness.
 
+Create the `.auto.tfvars` file and set the required parameters:
+
+```sh
+cp config/template.tfvars .auto.tfvars
+```
+
+Create the temporary keys:
+
+```sh
+mkdir .keys && ssh-keygen -f .keys/temp_rsa
+```
+
 Start by creating the sandbox infrastructure:
 
 ```sh

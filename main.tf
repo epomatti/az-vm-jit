@@ -2,11 +2,11 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.95.0"
+      version = "4.11.0"
     }
     azapi = {
       source  = "Azure/azapi"
-      version = "1.12.1"
+      version = "2.0.1"
     }
   }
 }
@@ -32,6 +32,8 @@ module "vm" {
   workload                   = local.workload
   resource_group_name        = azurerm_resource_group.default.name
   location                   = azurerm_resource_group.default.location
+  admin_username             = var.vm_admin_username
+  public_key_path            = var.vm_public_key_path
   subnet_id                  = module.vnet.subnet_id
   size                       = var.vm_size
   install_vmaccess_extension = var.install_vmaccess_extension

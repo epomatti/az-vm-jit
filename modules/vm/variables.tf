@@ -18,6 +18,14 @@ variable "size" {
   type = string
 }
 
+variable "admin_username" {
+  type = string
+}
+
+variable "public_key_path" {
+  type = string
+}
+
 variable "install_vmaccess_extension" {
   type = bool
 }
