@@ -4,6 +4,9 @@ Azure Virtual Machine (VM) with Just-in-Time access.
 
 You'll need to enable [Microsoft Defender for Servers][1] for the Subscription.
 
+> [!TIP]
+> Entra ID P2 license is also required for PIM
+
 Make sure you enable **Cloud Workload Protection (CWP)** for **Servers**. After that, install the agents using the Portal just for completeness.
 
 Create the `.auto.tfvars` file and set the required parameters:
