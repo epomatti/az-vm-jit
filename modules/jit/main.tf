@@ -10,7 +10,8 @@ resource "azapi_resource" "jit" {
   type      = "Microsoft.Security/locations/jitNetworkAccessPolicies@2020-01-01"
   name      = "LinuxJITPolicy"
   parent_id = "${var.resource_group_id}/providers/Microsoft.Security/locations/${var.location}"
-  body = jsonencode({
+
+  body = {
     properties = {
       virtualMachines = [
         {
@@ -27,5 +28,5 @@ resource "azapi_resource" "jit" {
       ]
     }
     kind = "Basic"
-  })
+  }
 }

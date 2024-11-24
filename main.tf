@@ -44,4 +44,6 @@ module "jit" {
   resource_group_id = azurerm_resource_group.default.id
   location          = azurerm_resource_group.default.location
   vm_id             = module.vm.vm_id
+
+  depends_on = [module.vm]
 }

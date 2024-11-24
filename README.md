@@ -30,7 +30,7 @@ terraform apply -auto-approve
 
 ## JIT
 
-If everything goes right, the JIT policy will automatically be created to the VM by the Terraform AzApi provider.
+If everything goes right, the JIT policy will automatically be created to the VM by the Terraform `AzApi` provider.
 
 Permissions required are:
 
