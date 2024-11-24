@@ -1,0 +1,17 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "azapi",
+        "bigenterprise",
+        "filebase",
+        "jsonencode",
+        "osdisk",
+        "vmaccess",
+        "vnet"
+    ],
+    "ignoreWords": [],
+    "import": []
+}
